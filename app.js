@@ -149,11 +149,11 @@ app.get('/:id', function (req, res) {
 
 app.post('/:id', function (req, res) {
   const id = parseInt(req.params.id)
-  senator.deleteSenator({id:id}, function(senator){
+  senator.deleteSenator({id:id}, function(){
     res.redirect('/')
-    console.log('successful deletion of:' , senator);
-  }).catch(function(e){
-    console.log('Delete unsuccessful');
+    console.log('successful deletion of:');
+  // }).catch(function(err){
+  //   console.log('Delete unsuccessful');
   });
 });
 //   mongoClient.connect(url, function(err, db) {

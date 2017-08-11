@@ -32,7 +32,7 @@ senatorsSchema.statics.findAndSort = function (findRestrictions, howToRender) {
       howToRender(senators);
     });
 }
-senatorsSchema.statics.deleteSenator = function (findRestrictions, howToRender) {
+senatorsSchema.statics.deleteSenator = function (findRestrictions, redirect) {
   this
     .deleteOne(findRestrictions)
     .then(function() {
@@ -43,7 +43,7 @@ senatorsSchema.statics.findOneSenator = function (findRestrictions, howToRender)
   this
     .findOne(findRestrictions)
     .then(function(senators) {
-      howToRender(senators);
+        howToRender(senators);
     });
 }
 
